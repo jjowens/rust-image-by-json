@@ -1,5 +1,5 @@
 [package]
-name = "rust-images"
+name = "rust-image-by-json"
 version = "0.1.0"
 edition = "2024"
 
