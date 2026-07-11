@@ -18,9 +18,10 @@ fn main() {
 
     println!("JSON file path: {}", args.json_file_path);
 
-    let img : ImageProcess = ImageProcess::new("test-images/dog1.png".to_string());
+    let img : ImageProcess = ImageProcess::new("test-images/dog1.png".to_string(), "test-output/dog1_hue_rotate_copy.png".to_string());
 
     img.hue_rotate(150);
-    img.save("test-output/dog1_hue_rotate.png").unwrap();
+    img.rotate(150);
+    //img.save("test-output/dog1_hue_rotate.png").unwrap();
 
 }
