@@ -1,4 +1,5 @@
 use clap::{Parser};
+use rust_image_by_json::services::image_service::ImageProcess;
 
 #[derive(Parser, Debug)]
 #[command(name = "myapp", author, version, about, long_about = None)]
@@ -16,4 +17,10 @@ fn main() {
     let args = Args::parse();
 
     println!("JSON file path: {}", args.json_file_path);
+
+    let img : ImageProcess = ImageProcess::new("test-images/dog1.png".to_string());
+
+    img.hue_rotate(150);
+    img.save("test-output/dog1_hue_rotate.png").unwrap();
+
 }
