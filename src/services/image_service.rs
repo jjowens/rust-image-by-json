@@ -1,44 +1,54 @@
 use std::fs;
-use image::{DynamicImage, GenericImageView};
+use serde::{Deserialize, Serialize};
+use serde_json::Result;
 
-pub struct ImageProcess {
-    current_image: DynamicImage,
+#[derive(Serialize, Deserialize)]
+struct ImageConfig {
     open_file_path: String,
     save_file_path: String,
+    instructions: Vec<Instruction>
 }
 
-impl ImageProcess {
-    pub fn new(open_file_path: String, save_file_path: String) -> ImageProcess {
-        fs::copy(open_file_path.clone(), save_file_path.clone()).unwrap();
+#[derive(Serialize, Deserialize)]
+struct Instruction {
+    process: String,
+    value: String,
+}
 
-        let img = image::open(save_file_path.clone()).unwrap();
-        ImageProcess { current_image: img, open_file_path, save_file_path }
+pub fn image_service(json_file_path: String) -> Result<()> {
+    let file_contents = fs::read_to_string(json_file_path);
+    let json: ImageConfig = serde_json::from_str(&file_contents.unwrap())?;
+
+    let mut img = image::open(json.open_file_path).unwrap();
+
+    for instruction in &json.instructions {
+        if instruction.process == "huerotate" {
+            let value = instruction.value.parse::<i32>().unwrap();
+            img = img.huerotate(value);
+        }
+        if instruction.process == "rotate" {
+            let value = instruction.value.parse::<i32>().unwrap();
+
+            match value {
+                90 => {
+                    img = img.rotate90()
+                }
+                180 => {
+                    img = img.rotate180()
+                },
+                270 => {
+                    img = img.rotate270()
+                }
+                _ => {
+                    // DO NOTHING
+                }
+            }
+
+
+        }
     }
 
-    pub fn make_grayscale(&self) -> image::DynamicImage {
-        self.current_image.grayscale()
-    }
+    img.save(json.save_file_path).unwrap();
 
-    // pub fn hue_rotate(&self, rotate : i32) -> image::DynamicImage {
-    //     self.current_image.huerotate(rotate)
-    // }
-
-    pub fn hue_rotate(&self, rotate : i32) -> Result<(), String> {
-        self.current_image.huerotate(rotate).save(self.save_file_path.clone()).unwrap();
-
-        Ok(())
-    }
-
-    pub fn rotate(&self, rotate : i32) -> Result<(), String> {
-        self.current_image.rotate90().save(self.save_file_path.clone()).unwrap();
-
-        Ok(())
-    }
-
-    pub fn save(&self, save_file_path : &str) -> Result<(), String> {
-        self.current_image.save(save_file_path).unwrap();
-
-        Ok(())
-    }
-
+    Ok(())
 }
