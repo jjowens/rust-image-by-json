@@ -1,4 +1,4 @@
-use std::fs;
+use std::fs::read_to_string;
 use serde::{Deserialize, Serialize};
 use serde_json::Result;
 
@@ -16,7 +16,7 @@ struct Instruction {
 }
 
 pub fn image_service(json_file_path: String) -> Result<()> {
-    let file_contents = fs::read_to_string(json_file_path);
+    let file_contents = read_to_string(json_file_path);
     let json: ImageConfig = serde_json::from_str(&file_contents.unwrap())?;
 
     let mut img = image::open(json.open_file_path).unwrap();
