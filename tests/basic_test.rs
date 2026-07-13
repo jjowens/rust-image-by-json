@@ -19,8 +19,8 @@ mod basic_test {
     }
 
     #[test]
-    fn basic_bad_input_json() {
-        let _ = run_json_instructions("test-json/basic_bad_input.json").unwrap();
+    fn basic_batch_json() {
+        let _ = run_json_instructions("test-json/basic_batch.json").unwrap();
     }
 
 }
