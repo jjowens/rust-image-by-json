@@ -12,3 +12,8 @@ Example: Load basic_batch.json
 ````
  cargo run -- --json-file-path ./test-json/basic_batch.json
 ````
+
+Example: Load basic_grayscale.json
+````
+ cargo run -- --json-file-path ./test-json/basic_grayscale.json
+````

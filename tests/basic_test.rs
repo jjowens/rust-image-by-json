@@ -23,4 +23,9 @@ mod basic_test {
         let _ = run_json_instructions("test-json/basic_batch.json").unwrap();
     }
 
+    #[test]
+    fn basic_grayscale_json() {
+        let _ = run_json_instructions("test-json/basic_grayscale.json").unwrap();
+    }
+
 }
