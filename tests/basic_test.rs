@@ -15,17 +15,12 @@ mod basic_test {
 
     #[test]
     fn basic_json() {
-       let _ = run_json_instructions("test-json/basic.json").unwrap();
+       let _ = run_json_instructions("test-json/basic/basic.json").unwrap();
     }
 
     #[test]
     fn basic_batch_json() {
-        let _ = run_json_instructions("test-json/basic_batch.json").unwrap();
-    }
-
-    #[test]
-    fn basic_grayscale_json() {
-        let _ = run_json_instructions("test-json/basic_grayscale.json").unwrap();
+        let _ = run_json_instructions("test-json/basic/basic_batch.json").unwrap();
     }
 
 }
