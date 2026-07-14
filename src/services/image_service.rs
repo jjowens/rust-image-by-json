@@ -9,7 +9,9 @@ pub enum ProcessType {
     #[serde(rename = "rotate")]
     Rotate,
     #[serde(rename = "huerotate")]
-    HueRotate
+    HueRotate,
+    #[serde(rename = "grayscale")]
+    Grayscale
 }
 
 #[derive(Serialize, Deserialize)]
@@ -24,7 +26,7 @@ pub struct ImageConfig {
 #[derive(Serialize, Deserialize)]
 pub struct Instruction {
     process: ProcessType,
-    value: String,
+    value: Option<String>,
 }
 
 pub fn image_service(json_file_path: String) -> Result<()> {
@@ -58,13 +60,19 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
     let mut img = image::open(open_file_path).unwrap();
 
     for instruction in instructions {
+        let current_val = instruction.value.clone().unwrap_or("".to_string());
+
         match instruction.process {
             ProcessType::HueRotate => {
-                let value = instruction.value.parse::<i32>().unwrap();
+                let value = current_val.parse::<i32>().unwrap_or(0);
+
                 img = img.huerotate(value);
+            },
+            ProcessType::Grayscale => {
+                img = img.grayscale();
             }
             ProcessType::Rotate => {
-                let value = instruction.value.parse::<i32>().unwrap();
+                let value = current_val.parse::<i32>().unwrap_or(0);
 
                 println!("Rotate: {}", value);
 
