@@ -15,7 +15,9 @@ pub enum ProcessType {
     #[serde(rename = "brighten")]
     Brighten,
     #[serde(rename = "contrast")]
-    Contrast
+    Contrast,
+    #[serde(rename = "flip")]
+    Flip
 }
 
 #[derive(Serialize, Deserialize)]
@@ -84,6 +86,20 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
                 let value = current_val.parse::<f32>().unwrap_or(0.0);
 
                 img = img.adjust_contrast(value);
+            },
+            ProcessType::Flip => {
+                match current_val.as_str().to_lowercase().as_str() {
+                    "h" => {
+                        img = img.fliph();
+                    },
+                    "v" => {
+                        img = img.flipv();
+                    },
+                    _ => {
+                        // DO NOTHING
+                    }
+                }
+                
             },
             ProcessType::Rotate => {
                 let value = current_val.parse::<i32>().unwrap_or(0);

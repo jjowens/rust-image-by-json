@@ -1,0 +1,8 @@
+{
+  "open_directory_path": "test-images/batch",
+  "save_directory_path": "test-output/flip/batch",
+  "instructions": [
+    {"process": "flip", "value": "h"},
+    {"process": "flip", "value": "v"}
+  ]
+}
