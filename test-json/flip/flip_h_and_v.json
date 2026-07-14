@@ -1,0 +1,8 @@
+{
+  "open_file_path": "test-images/dog1.png",
+  "save_file_path": "test-output/flip/dog2_flip_h_and_v.png",
+  "instructions": [
+    {"process": "flip", "value": "h"},
+    {"process": "flip", "value": "v"}
+  ]
+}
