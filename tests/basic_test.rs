@@ -8,7 +8,7 @@ mod basic_test {
 
         cmd.arg("--json-file-path").arg(json_file_path);
 
-        let output = cmd.unwrap();
+        let _ = cmd.unwrap();
 
         Ok(())
     }

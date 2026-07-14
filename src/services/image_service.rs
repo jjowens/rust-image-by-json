@@ -4,6 +4,15 @@ use serde::{Deserialize, Serialize};
 use serde_json::Result;
 
 #[derive(Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+pub enum ProcessType {
+    #[serde(rename = "rotate")]
+    Rotate,
+    #[serde(rename = "huerotate")]
+    HueRotate
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct ImageConfig {
     open_file_path: Option<String>,
     save_file_path: Option<String>,
@@ -14,7 +23,7 @@ pub struct ImageConfig {
 
 #[derive(Serialize, Deserialize)]
 pub struct Instruction {
-    process: String,
+    process: ProcessType,
     value: String,
 }
 
@@ -49,29 +58,31 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
     let mut img = image::open(open_file_path).unwrap();
 
     for instruction in instructions {
-        if instruction.process == "huerotate" {
-            let value = instruction.value.parse::<i32>().unwrap();
-            img = img.huerotate(value);
-        }
-        if instruction.process == "rotate" {
-            let value = instruction.value.parse::<i32>().unwrap();
+        match instruction.process {
+            ProcessType::HueRotate => {
+                let value = instruction.value.parse::<i32>().unwrap();
+                img = img.huerotate(value);
+            }
+            ProcessType::Rotate => {
+                let value = instruction.value.parse::<i32>().unwrap();
 
-            match value {
-                90 => {
-                    img = img.rotate90()
-                }
-                180 => {
-                    img = img.rotate180()
-                },
-                270 => {
-                    img = img.rotate270()
-                }
-                _ => {
-                    // DO NOTHING
+                println!("Rotate: {}", value);
+
+                match value {
+                    90 => {
+                        img = img.rotate90()
+                    }
+                    180 => {
+                        img = img.rotate180()
+                    },
+                    270 => {
+                        img = img.rotate270()
+                    }
+                    _ => {
+                        // DO NOTHING
+                    }
                 }
             }
-
-
         }
     }
 
