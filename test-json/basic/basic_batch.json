@@ -1,6 +1,6 @@
 {
   "open_directory_path": "test-images/batch",
-  "save_directory_path": "test-output/batch",
+  "save_directory_path": "test-output/basic/batch",
   "instructions": [
     {"process": "huerotate", "value": "100"},
     {"process": "rotate", "value": "270"}

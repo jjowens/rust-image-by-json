@@ -1,6 +1,6 @@
 {
   "open_file_path": "test-images/dog1.png",
-  "save_file_path": "test-output/dog1_contrast_100.png",
+  "save_file_path": "test-output/brighten-and-contrast/dog1_contrast_100.png",
   "instructions": [
     {"process": "contrast", "value": "100"}
   ]

@@ -1,5 +1,5 @@
 #[cfg(test)]
-mod basic_brighten_and_contrast_test {
+mod brighten_and_contrast_test {
     use assert_cmd::Command;
     const APP_NAME: &str = "rust-image-by-json";
 
@@ -15,27 +15,22 @@ mod basic_brighten_and_contrast_test {
 
     #[test]
     fn brighten() {
-       let _ = run_json_instructions("test-json/basic_brighten.json").unwrap();
+       let _ = run_json_instructions("test-json/brighten-and-contrast/brighten.json").unwrap();
     }
 
     #[test]
     fn constrast() {
-        let _ = run_json_instructions("test-json/basic_contrast.json").unwrap();
+        let _ = run_json_instructions("test-json/brighten-and-contrast/contrast.json").unwrap();
     }
 
     #[test]
     fn brighten_and_contrast() {
-        let _ = run_json_instructions("test-json/basic_brighten_and_contrast.json").unwrap();
+        let _ = run_json_instructions("test-json/brighten-and-contrast/brighten_and_contrast.json").unwrap();
     }
 
     #[test]
     fn brighten_and_contrast_reverse() {
-        let _ = run_json_instructions("test-json/basic_brighten_and_contrast_reverse.json").unwrap();
-    }
-
-    #[test]
-    fn grayscale_combo() {
-        let _ = run_json_instructions("test-json/basic_grayscale_combo.json").unwrap();
+        let _ = run_json_instructions("test-json/brighten-and-contrast/brighten_and_contrast_reverse.json").unwrap();
     }
 
 }

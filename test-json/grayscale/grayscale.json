@@ -1,6 +1,6 @@
 {
   "open_file_path": "test-images/dog2.png",
-  "save_file_path": "test-output/dog1_basic_grayscale.png",
+  "save_file_path": "test-output/grayscale/dog1_basic_grayscale.png",
   "instructions": [
     {"process": "grayscale"},
     {"process": "rotate", "value": "270"}
