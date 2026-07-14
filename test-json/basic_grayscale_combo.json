@@ -1,0 +1,9 @@
+{
+  "open_file_path": "test-images/dog2.png",
+  "save_file_path": "test-output/dog2_grayscale_combo.png",
+  "instructions": [
+    {"process": "grayscale"},
+    {"process": "brighten", "value": "30"},
+    {"process": "contrast", "value": "80"}
+  ]
+}

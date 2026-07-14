@@ -11,7 +11,11 @@ pub enum ProcessType {
     #[serde(rename = "huerotate")]
     HueRotate,
     #[serde(rename = "grayscale")]
-    Grayscale
+    Grayscale,
+    #[serde(rename = "brighten")]
+    Brighten,
+    #[serde(rename = "contrast")]
+    Contrast
 }
 
 #[derive(Serialize, Deserialize)]
@@ -70,12 +74,20 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
             },
             ProcessType::Grayscale => {
                 img = img.grayscale();
-            }
-            ProcessType::Rotate => {
+            },
+            ProcessType::Brighten => {
                 let value = current_val.parse::<i32>().unwrap_or(0);
 
-                println!("Rotate: {}", value);
+                img = img.brighten(value);
+            },
+            ProcessType::Contrast => {
+                let value = current_val.parse::<f32>().unwrap_or(0.0);
 
+                img = img.adjust_contrast(value);
+            },
+            ProcessType::Rotate => {
+                let value = current_val.parse::<i32>().unwrap_or(0);
+                
                 match value {
                     90 => {
                         img = img.rotate90()
