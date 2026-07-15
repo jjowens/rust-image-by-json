@@ -1,30 +1,22 @@
+mod shared;
+
 #[cfg(test)]
 mod grayscale_test {
-    use assert_cmd::Command;
-    const APP_NAME: &str = "rust-image-by-json";
+    use crate::shared;
 
-    fn run_json_instructions(json_file_path: &str) -> Result<(), String> {
-        let mut cmd = Command::cargo_bin(APP_NAME).unwrap();
-
-        cmd.arg("--json-file-path").arg(json_file_path);
-
-        let _ = cmd.unwrap();
-
-        Ok(())
-    }
     #[test]
     fn basic_grayscale_json() {
-        let _ = run_json_instructions("test-json/grayscale/grayscale.json").unwrap();
+        let _ = shared::run_json_instructions("test-json/grayscale/grayscale.json");
     }
 
     #[test]
     fn grayscale_combo() {
-        let _ = run_json_instructions("test-json/grayscale/grayscale_combo.json").unwrap();
+        let _ = shared::run_json_instructions("test-json/grayscale/grayscale_combo.json");
     }
 
     #[test]
     fn grayscale_batch() {
-        let _ = run_json_instructions("test-json/grayscale/grayscale_batch.json").unwrap();
+        let _ = shared::run_json_instructions("test-json/grayscale/grayscale_batch.json");
     }
 
 }
