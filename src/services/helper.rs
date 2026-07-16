@@ -32,8 +32,7 @@ pub fn get_image_format(save_file_type: SaveFileType) -> ImageFormat {
         SaveFileType::Tga => { ImageFormat::Tga},
         SaveFileType::Ico => { ImageFormat::Ico},
         SaveFileType::Hdr => { ImageFormat::Hdr},
-        SaveFileType::Avif => { ImageFormat::Avif},
-        _ => { ImageFormat::Jpeg},
+        SaveFileType::Avif => { ImageFormat::Avif}
     };
     
     image_file_type
