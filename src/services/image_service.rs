@@ -1,55 +1,8 @@
 use std::fs::{read_dir, read_to_string};
 use std::path::PathBuf;
-use image::codecs::avif::ColorSpace;
-use image::ImageFormat;
-use image::metadata::Cicp;
 use serde::{Deserialize, Serialize};
 use serde_json::Result;
-use crate::services::helper::{get_image_format, get_save_file_type};
-
-#[derive(Serialize, Deserialize)]
-#[serde(rename_all = "lowercase")]
-pub enum ProcessType {
-    #[serde(rename = "rotate")]
-    Rotate,
-    #[serde(rename = "huerotate")]
-    HueRotate,
-    #[serde(rename = "grayscale")]
-    Grayscale,
-    #[serde(rename = "brighten")]
-    Brighten,
-    #[serde(rename = "contrast")]
-    Contrast,
-    #[serde(rename = "flip")]
-    Flip
-}
-
-#[derive(Serialize, Deserialize)]
-#[serde(rename_all = "lowercase")]
-pub enum SaveFileType {
-    #[serde(rename = "jpeg")]
-    Jpeg,
-    #[serde(rename = "jpg")]
-    Jpg,
-    #[serde(rename = "gif")]
-    Gif,
-    #[serde(rename = "png")]
-    Png,
-    #[serde(rename = "tiff")]
-    Tiff,
-    #[serde(rename = "bmp")]
-    Bmp,
-    #[serde(rename = "ico")]
-    Ico,
-    #[serde(rename = "webp")]
-    Webp,
-    #[serde(rename = "tga")]
-    Tga,
-    #[serde(rename = "hdr")]
-    Hdr,
-    #[serde(rename = "avif")]
-    Avif
-}
+use crate::services::models::process_type::ProcessType;
 
 #[derive(Serialize, Deserialize)]
 pub struct ImageConfig {
@@ -57,8 +10,7 @@ pub struct ImageConfig {
     save_file_path: Option<String>,
     instructions: Vec<Instruction>,
     open_directory_path: Option<String>,
-    save_directory_path: Option<String>,
-    save_file_type: Option<SaveFileType>,
+    save_directory_path: Option<String>
 }
 
 #[derive(Serialize, Deserialize)]
