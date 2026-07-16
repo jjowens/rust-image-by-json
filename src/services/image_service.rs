@@ -78,9 +78,6 @@ pub fn image_service(json_file_path: String) -> Result<()> {
             let current_val = path.unwrap();
             let current_file_path = current_val.path().to_str().unwrap().to_string();
             let save_file_name = current_val.file_name().to_str().unwrap().to_string();
-            let current_file_type = current_val.path().extension().unwrap().to_str().unwrap().to_string();
-            let default_save_file_type = get_save_file_type(&current_file_path);
-            let save_file_type = json.save_file_type.unwrap_or(default_save_file_type);
 
             let mut save_file_path = PathBuf::new();
             save_file_path.push(json.save_directory_path.clone().unwrap());
@@ -88,20 +85,18 @@ pub fn image_service(json_file_path: String) -> Result<()> {
 
             let _ = read_instructions(&current_file_path,
                                       &save_file_path.to_str().unwrap().to_string(),
-                                      &json.instructions,
-                                      SaveFileType::Png);
+                                      &json.instructions);
         }
     } else {
         let _ = read_instructions(&json.open_file_path.unwrap().to_string(),
                                   &json.save_file_path.unwrap().to_string(),
-                                  &json.instructions,
-                                  SaveFileType::Png);
+                                  &json.instructions);
     }
 
     Ok(())
 }
 
-pub fn read_instructions(open_file_path: &String, save_file_path: &String, instructions: &Vec<Instruction>, save_file_type: SaveFileType) ->  Result<()>  {
+pub fn read_instructions(open_file_path: &String, save_file_path: &String, instructions: &Vec<Instruction>) ->  Result<()>  {
     let mut img = image::open(open_file_path).unwrap();
 
     for instruction in instructions {
@@ -161,11 +156,7 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
         }
     }
 
-    //img.save(save_file_path).unwrap();
-
-    let image_format = get_image_format(save_file_type);
-
-    img.save_with_format(save_file_path, image_format).unwrap();
+    img.save(save_file_path).unwrap();
 
     Ok(())
 }
