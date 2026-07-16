@@ -1,5 +1,5 @@
 use image::ImageFormat;
-use crate::services::image_service::SaveFileType;
+use crate::services::models::save_file_type::SaveFileType;
 
 pub fn get_save_file_type(file_extension: &String) -> SaveFileType {
     let save_file_type = match file_extension.as_str() {
