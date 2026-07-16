@@ -1,0 +1,8 @@
+{
+  "open_file_path": "test-images/dog1.png",
+  "save_file_path": "test-output/basic/dog1_basic_update.jpg",
+  "instructions": [
+    {"process": "huerotate", "value": "100"},
+    {"process": "rotate", "value": "270"}
+  ]
+}

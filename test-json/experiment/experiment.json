@@ -1,0 +1,7 @@
+{
+  "open_file_path": "test-images/dog1.png",
+  "save_file_path": "test-output/basic/dog1_experiment.gif",
+  "instructions": [
+    {"process": "experiment", "value": "1"}
+  ]
+}
