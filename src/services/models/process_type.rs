@@ -14,5 +14,11 @@ pub enum ProcessType {
     #[serde(rename = "contrast")]
     Contrast,
     #[serde(rename = "flip")]
-    Flip
+    Flip,
+    #[serde(rename = "blur")]
+    Blur,
+    #[serde(rename = "fastblur")]
+    FastBlur,
+    #[serde(rename = "bluradvanced")]
+    BlurAdvanced,
 }
