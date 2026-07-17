@@ -3,6 +3,7 @@ use std::path::PathBuf;
 use image::imageops::GaussianBlurParameters;
 use serde::{Deserialize, Serialize};
 use serde_json::Result;
+use crate::services::helper::get_gaussian_blur;
 use crate::services::models::process_type::ProcessType;
 
 #[derive(Serialize, Deserialize)]
@@ -86,8 +87,10 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
             },
             ProcessType::BlurAdvanced => {
                 let value = current_val.parse::<f32>().unwrap_or(0.0);
+                let gauss_parameters = get_gaussian_blur(current_val);
 
-                img = img.blur_advanced(GaussianBlurParameters::new_from_radius(value));
+                //img = img.blur_advanced(GaussianBlurParameters::new_from_radius(value));
+                img = img.blur_advanced(gauss_parameters);
             },
             ProcessType::Flip => {
                 match current_val.as_str().to_lowercase().as_str() {
