@@ -2,6 +2,6 @@
   "open_file_path": "test-images/dog2.png",
   "save_file_path": "test-output/blur/dog2_blur_advanced_radius_10.png",
   "instructions": [
-    {"process": "bluradvanced", "value": "radius,10"}
+    {"process": "bluradvanced", "blurtype": "radius", "value": "10"}
   ]
 }
