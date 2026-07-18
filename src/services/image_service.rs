@@ -1,7 +1,7 @@
 use std::fs::{read_dir, read_to_string};
 use std::path::PathBuf;
 use serde_json::Result;
-use crate::services::helper::get_gaussian_blur;
+use crate::services::helper::{create_directory_from_file_path, get_gaussian_blur};
 use crate::services::models::process_type::ProcessType;
 use crate::services::models::blur_type::BlurType;
 use crate::services::models::instruction::Instruction;
@@ -113,6 +113,8 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
             }
         }
     }
+
+    let _ = create_directory_from_file_path(save_file_path);
 
     img.save(save_file_path).unwrap();
 
