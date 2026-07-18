@@ -1,3 +1,4 @@
+use std::path::Path;
 use image::ImageFormat;
 use crate::services::models::save_file_type::SaveFileType;
 use image::imageops::GaussianBlurParameters;
@@ -58,4 +59,14 @@ pub fn get_gaussian_blur(blur_type: &BlurType, val: String) -> GaussianBlurParam
 
 pub fn cast_str_to_f32(val: &str, default_val: f32) -> f32 {
     val.parse::<f32>().unwrap_or_else(|_| default_val)
+}
+
+pub fn create_directory_from_file_path(file_path: &str) -> Result<(), String> {
+
+    let path = Path::new(file_path);
+
+    let prefix = path.parent().unwrap();
+    std::fs::create_dir_all(prefix).unwrap();
+
+    Ok(())
 }
