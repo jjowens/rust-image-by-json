@@ -2,6 +2,6 @@
   "open_file_path": "test-images/dog2.png",
   "save_file_path": "test-output/blur/dog2_blur_advanced_anisotropics_10x10.png",
   "instructions": [
-    {"process": "bluradvanced", "value": "anisotropic,10,10"}
+    {"process": "bluradvanced", "blurtype": "anisotropic", "value": "10,10"}
   ]
 }

@@ -1,10 +1,10 @@
 use std::fs::{read_dir, read_to_string};
 use std::path::PathBuf;
-use image::imageops::GaussianBlurParameters;
 use serde::{Deserialize, Serialize};
 use serde_json::Result;
 use crate::services::helper::get_gaussian_blur;
 use crate::services::models::process_type::ProcessType;
+use crate::services::models::blur_type::BlurType;
 
 #[derive(Serialize, Deserialize)]
 pub struct ImageConfig {
@@ -19,6 +19,7 @@ pub struct ImageConfig {
 pub struct Instruction {
     process: ProcessType,
     value: Option<String>,
+    blurtype: Option<BlurType>
 }
 
 pub fn image_service(json_file_path: String) -> Result<()> {
@@ -86,8 +87,9 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
                 img = img.fast_blur(value);
             },
             ProcessType::BlurAdvanced => {
-                let value = current_val.parse::<f32>().unwrap_or(0.0);
-                let gauss_parameters = get_gaussian_blur(current_val);
+                //let value = current_val.parse::<f32>().unwrap_or(0.0);
+                let blur_type : &BlurType = instruction.blurtype.as_ref().unwrap_or_else(|| &BlurType::Smooth3);
+                let gauss_parameters = get_gaussian_blur(blur_type, current_val);
 
                 //img = img.blur_advanced(GaussianBlurParameters::new_from_radius(value));
                 img = img.blur_advanced(gauss_parameters);

@@ -41,6 +41,7 @@ mod blur_test {
         let _ = shared::run_json_instructions("test-json/blur/bluradvanced_anisotropic_30x30.json");
         let _ = shared::run_json_instructions("test-json/blur/bluradvanced_anisotropic_10x50.json");
         let _ = shared::run_json_instructions("test-json/blur/bluradvanced_anisotropic_10x100.json");
+        let _ = shared::run_json_instructions("test-json/blur/bluradvanced_anisotropic_100x10.json");
     }
 
 }

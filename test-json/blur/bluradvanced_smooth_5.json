@@ -2,6 +2,6 @@
   "open_file_path": "test-images/dog2.png",
   "save_file_path": "test-output/blur/dog2_blur_smooth_5.png",
   "instructions": [
-    {"process": "bluradvanced", "value": "smooth_5"}
+    {"process": "bluradvanced", "blurtype": "smooth_5", "value": "smooth_5"}
   ]
 }
