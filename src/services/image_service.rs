@@ -1,26 +1,11 @@
 use std::fs::{read_dir, read_to_string};
 use std::path::PathBuf;
-use serde::{Deserialize, Serialize};
 use serde_json::Result;
 use crate::services::helper::get_gaussian_blur;
 use crate::services::models::process_type::ProcessType;
 use crate::services::models::blur_type::BlurType;
-
-#[derive(Serialize, Deserialize)]
-pub struct ImageConfig {
-    open_file_path: Option<String>,
-    save_file_path: Option<String>,
-    instructions: Vec<Instruction>,
-    open_directory_path: Option<String>,
-    save_directory_path: Option<String>
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct Instruction {
-    process: ProcessType,
-    value: Option<String>,
-    blurtype: Option<BlurType>
-}
+use crate::services::models::instruction::Instruction;
+use crate::services::models::image_config::ImageConfig;
 
 pub fn image_service(json_file_path: String) -> Result<()> {
     let file_contents = read_to_string(json_file_path);
