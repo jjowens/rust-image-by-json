@@ -88,18 +88,23 @@ pub fn create_directory_from_file_path(file_path: &str) -> Result<(), String> {
     Ok(())
 }
 
-pub fn check_save_file_path(save_file_path: &str, save_as_image_format: ImageFormat) -> String {
+pub fn check_save_file_path(save_file_path: &str, save_as_image_format: Option<ImageFormat>) -> String {
     let current_image_format = ImageFormat::from_path(save_file_path).unwrap();
 
-    if save_as_image_format == current_image_format {
+    if save_as_image_format.is_none() {
         save_file_path.to_string()
     } else {
-        let file_extension = get_file_extension_on_image_format(save_as_image_format);
-        let mut path = PathBuf::from(save_file_path);
-        path.set_extension(file_extension);
+        if save_as_image_format == Some(current_image_format) {
+            save_file_path.to_string()
+        } else {
+            let file_extension = get_file_extension_on_image_format(save_as_image_format.unwrap());
+            let mut path = PathBuf::from(save_file_path);
+            path.set_extension(file_extension);
 
-        let result = path.to_str().unwrap();
+            let result = path.to_str().unwrap();
 
-        result.to_string()
+            result.to_string()
+        }
     }
+
 }
