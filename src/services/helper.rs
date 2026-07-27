@@ -1,4 +1,5 @@
-use std::path::Path;
+use std::path;
+use std::path::{Path, PathBuf};
 use image::ImageFormat;
 use crate::services::models::save_file_type::SaveFileType;
 use image::imageops::GaussianBlurParameters;
@@ -41,6 +42,24 @@ pub fn get_image_format(save_file_type: SaveFileType) -> ImageFormat {
     image_file_type
 }
 
+pub fn get_file_extension_on_image_format(image_format: ImageFormat) -> String {
+    let file_extension = match image_format {
+        ImageFormat::Tiff => { "tiff" },
+        ImageFormat::Png => { "png" },
+        ImageFormat::Gif => { "gif" },
+        ImageFormat::WebP => { "webp"},
+        ImageFormat::Jpeg => { "jpg" },
+        ImageFormat::Bmp => { "bmp" },
+        ImageFormat::Tga => { "tga" },
+        ImageFormat::Ico => { "ico" },
+        ImageFormat::Hdr => { "hdr" },
+        ImageFormat::Avif => { "avif" }
+        _ => { "png" }
+    };
+
+    file_extension.to_string()
+}
+
 pub fn get_gaussian_blur(blur_type: &BlurType, val: String) -> GaussianBlurParameters {
     let arr = &val.split(",").collect::<Vec<&str>>();
 
@@ -62,11 +81,26 @@ pub fn cast_str_to_f32(val: &str, default_val: f32) -> f32 {
 }
 
 pub fn create_directory_from_file_path(file_path: &str) -> Result<(), String> {
-
     let path = Path::new(file_path);
 
     let prefix = path.parent().unwrap();
     std::fs::create_dir_all(prefix).unwrap();
 
     Ok(())
+}
+
+pub fn check_save_file_path(save_file_path: &str, save_as_image_format: ImageFormat) -> String {
+    let current_image_format = ImageFormat::from_path(save_file_path).unwrap();
+
+    if save_as_image_format == current_image_format {
+        save_file_path.to_string()
+    } else {
+        let file_extension = get_file_extension_on_image_format(save_as_image_format);
+        let mut path = PathBuf::from(save_file_path);
+        path.set_extension(file_extension);
+
+        let result = path.to_str().unwrap();
+
+        result.to_string()
+    }
 }
