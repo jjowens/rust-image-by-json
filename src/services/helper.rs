@@ -1,4 +1,3 @@
-use std::path;
 use std::path::{Path, PathBuf};
 use image::ImageFormat;
 use crate::services::models::save_file_type::SaveFileType;

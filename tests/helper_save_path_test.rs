@@ -20,5 +20,10 @@ mod helper_save_path_test {
     fn should_save_incorrect_filename_as_bmp() {
         let _ = test_save_path("test-output/dog1.png", "test-output/dog1.bmp", ImageFormat::Bmp);
     }
-    
+
+    #[test]
+    fn should_save_incorrect_filename_as_tiff() {
+        let _ = test_save_path("test-output/dog1.png", "test-output/dog1.tiff", ImageFormat::Tiff);
+    }
+
 }
