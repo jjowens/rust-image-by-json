@@ -59,6 +59,25 @@ pub fn get_file_extension_on_image_format(image_format: ImageFormat) -> String {
     file_extension.to_string()
 }
 
+pub fn get_image_format_on_file_extension(file_extension: &String) -> ImageFormat {
+    let file_extension = match file_extension.as_str() {
+        "tiff" => { ImageFormat::Tiff },
+        "png" => { ImageFormat::Png },
+        "gif" => { ImageFormat::Gif },
+        "webp" => { ImageFormat::WebP},
+        "jpeg" => { ImageFormat::Jpeg },
+        "jpg" => { ImageFormat::Jpeg },
+        "bmp" => { ImageFormat::Bmp },
+        "tga" => { ImageFormat::Tga },
+        "ico" => { ImageFormat::Ico },
+        "hdr" => { ImageFormat::Hdr },
+        "avif" => { ImageFormat::Avif }
+        _ => { ImageFormat::Png }
+    };
+
+    file_extension
+}
+
 pub fn get_gaussian_blur(blur_type: &BlurType, val: String) -> GaussianBlurParameters {
     let arr = &val.split(",").collect::<Vec<&str>>();
 

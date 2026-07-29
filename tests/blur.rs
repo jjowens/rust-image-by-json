@@ -11,6 +11,7 @@ mod blur_test {
     #[test]
     fn fast_blur_json() {
         let _ = shared::run_json_instructions("test-json/blur/fastblur.json");
+        let _ = shared::run_json_instructions("test-json/blur/fastblur_as_jpg.json");
     }
 
     #[test]

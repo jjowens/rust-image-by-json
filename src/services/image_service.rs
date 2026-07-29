@@ -1,18 +1,22 @@
 use std::fs::{read_dir, read_to_string};
 use std::path::PathBuf;
+use image::ImageFormat;
 use serde_json::Result;
 use crate::services::helper::{create_directory_from_file_path, get_gaussian_blur};
 use crate::services::models::process_type::ProcessType;
 use crate::services::models::blur_type::BlurType;
+use crate::services::models::config::Config;
 use crate::services::models::instruction::Instruction;
 use crate::services::models::json_file::JsonFile;
+use crate::services::helper::{check_save_file_path, get_image_format_on_file_extension};
 
 pub fn image_service(json_file_path: String) -> Result<()> {
     let file_contents = read_to_string(json_file_path);
     let json: JsonFile = serde_json::from_str(&file_contents.unwrap())?;
+    let config = &json.config;
 
-    if json.config.open_directory_path.is_some() && json.config.save_directory_path.is_some() {
-        let paths = read_dir(json.config.open_directory_path.clone().unwrap()).unwrap();
+    if config.open_directory_path.is_some() && config.save_directory_path.is_some() {
+        let paths = read_dir(config.open_directory_path.clone().unwrap()).unwrap();
 
         for path in paths {
             let current_val = path.unwrap();
@@ -20,23 +24,25 @@ pub fn image_service(json_file_path: String) -> Result<()> {
             let save_file_name = current_val.file_name().to_str().unwrap().to_string();
 
             let mut save_file_path = PathBuf::new();
-            save_file_path.push(json.config.save_directory_path.clone().unwrap());
+            save_file_path.push(config.save_directory_path.clone().unwrap());
             save_file_path.push(save_file_name);
 
             let _ = read_instructions(&current_file_path,
                                       &save_file_path.to_str().unwrap().to_string(),
-                                      &json.instructions);
+                                      &json.instructions,
+                                      &config);
         }
     } else {
-        let _ = read_instructions(&json.config.open_file_path.unwrap().to_string(),
-                                  &json.config.save_file_path.unwrap().to_string(),
-                                  &json.instructions);
+        let _ = read_instructions(&config.open_file_path.as_ref().unwrap().to_string(),
+                                  &config.save_file_path.as_ref().unwrap().to_string(),
+                                  &json.instructions,
+                                  &config);
     }
 
     Ok(())
 }
 
-pub fn read_instructions(open_file_path: &String, save_file_path: &String, instructions: &Vec<Instruction>) ->  Result<()>  {
+pub fn read_instructions(open_file_path: &String, save_file_path: &String, instructions: &Vec<Instruction>, config: &Config) ->  Result<()>  {
     let mut img = image::open(open_file_path).unwrap();
 
     for instruction in instructions {
@@ -114,9 +120,17 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
         }
     }
 
+    let mut save_image_format = ImageFormat::from_path(save_file_path).unwrap();
+
+    if config.save_as_format.is_some() {
+        save_image_format = get_image_format_on_file_extension(config.save_as_format.as_ref().unwrap());
+    }
+
+    let new_save_file_path = check_save_file_path(save_file_path, Some(save_image_format));
     let _ = create_directory_from_file_path(save_file_path);
 
-    img.save(save_file_path).unwrap();
+    //img.save(save_file_path).unwrap();
+    let _ = img.save_with_format(new_save_file_path, save_image_format);
 
     Ok(())
 }
