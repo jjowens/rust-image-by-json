@@ -106,5 +106,4 @@ pub fn check_save_file_path(save_file_path: &str, save_as_image_format: Option<I
             result.to_string()
         }
     }
-
 }
