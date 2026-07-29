@@ -5,14 +5,14 @@ use crate::services::helper::{create_directory_from_file_path, get_gaussian_blur
 use crate::services::models::process_type::ProcessType;
 use crate::services::models::blur_type::BlurType;
 use crate::services::models::instruction::Instruction;
-use crate::services::models::image_config::ImageConfig;
+use crate::services::models::json_file::JsonFile;
 
 pub fn image_service(json_file_path: String) -> Result<()> {
     let file_contents = read_to_string(json_file_path);
-    let json: ImageConfig = serde_json::from_str(&file_contents.unwrap())?;
+    let json: JsonFile = serde_json::from_str(&file_contents.unwrap())?;
 
-    if json.open_directory_path.is_some() && json.save_directory_path.is_some() {
-        let paths = read_dir(json.open_directory_path.clone().unwrap()).unwrap();
+    if json.config.open_directory_path.is_some() && json.config.save_directory_path.is_some() {
+        let paths = read_dir(json.config.open_directory_path.clone().unwrap()).unwrap();
 
         for path in paths {
             let current_val = path.unwrap();
@@ -20,7 +20,7 @@ pub fn image_service(json_file_path: String) -> Result<()> {
             let save_file_name = current_val.file_name().to_str().unwrap().to_string();
 
             let mut save_file_path = PathBuf::new();
-            save_file_path.push(json.save_directory_path.clone().unwrap());
+            save_file_path.push(json.config.save_directory_path.clone().unwrap());
             save_file_path.push(save_file_name);
 
             let _ = read_instructions(&current_file_path,
@@ -28,8 +28,8 @@ pub fn image_service(json_file_path: String) -> Result<()> {
                                       &json.instructions);
         }
     } else {
-        let _ = read_instructions(&json.open_file_path.unwrap().to_string(),
-                                  &json.save_file_path.unwrap().to_string(),
+        let _ = read_instructions(&json.config.open_file_path.unwrap().to_string(),
+                                  &json.config.save_file_path.unwrap().to_string(),
                                   &json.instructions);
     }
 
