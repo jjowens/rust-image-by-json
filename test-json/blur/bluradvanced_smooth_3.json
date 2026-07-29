@@ -1,6 +1,8 @@
 {
-  "open_file_path": "test-images/dog2.png",
-  "save_file_path": "test-output/blur/dog2_blur_smooth_3.png",
+  "config": {
+    "open_file_path": "test-images/dog2.png",
+    "save_file_path": "test-output/blur/dog2_blur_smooth_3.png"
+  },
   "instructions": [
     {"process": "bluradvanced", "blurtype": "smooth_3", "value": "smooth_3"}
   ]
