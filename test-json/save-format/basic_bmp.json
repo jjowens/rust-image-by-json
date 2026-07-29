@@ -1,8 +1,8 @@
 {
   "config": {
     "open_file_path": "test-images/dog1.png",
-    "save_file_path": "test-output/save-format/basic/dog1.jpg",
-    "save_as_format": "jpg"
+    "save_file_path": "test-output/save-format/bmp/dog1.bmp",
+    "save_as_format": "bmp"
   },
   "instructions": [
     {"process": "huerotate", "value": "100"},
