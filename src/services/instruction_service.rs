@@ -10,7 +10,7 @@ use crate::services::models::instruction::Instruction;
 use crate::services::models::json_file::JsonFile;
 use crate::services::helper::{check_save_file_path, get_image_format_on_file_extension};
 
-pub fn image_service(json_file_path: String) -> Result<()> {
+pub fn instruction_service(json_file_path: String) -> Result<()> {
     let file_contents = read_to_string(json_file_path);
     let json: JsonFile = serde_json::from_str(&file_contents.unwrap())?;
     let config = &json.config;

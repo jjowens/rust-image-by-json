@@ -4,3 +4,4 @@ pub mod instruction;
 pub mod image_config;
 pub mod json_file;
 pub mod config;
+pub mod instruction_range;
