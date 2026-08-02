@@ -11,6 +11,7 @@ struct Args {
 
 fn main() {
     println!("Image By JSON");
+    println!("Package Name: {}", env!("CARGO_PKG_NAME"));
     println!("Version {}", env!("CARGO_PKG_VERSION"));
 
     let args = Args::parse();
