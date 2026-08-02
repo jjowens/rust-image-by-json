@@ -5,7 +5,7 @@ Written in Rust. Reads JSON file to batch update images
 
 Example: Load basic.json
 ````
- cargo run -- --json-file-path ./test-json/basic.json
+ cargo run -- --json-file-path ./test-json/basic/basic.json
 ````
 
 Example: Load basic_batch.json
