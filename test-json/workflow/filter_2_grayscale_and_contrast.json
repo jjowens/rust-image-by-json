@@ -1,0 +1,10 @@
+{
+  "config": {
+    "open_file_path": "test-images/dog2.png",
+    "save_file_path": "test-output/workflow/filters/filter_2/grayscale_and_contrast.png"
+  },
+  "instructions": [
+    {"process": "grayscale"},
+    {"process": "contrast", "value": "20"}
+  ]
+}

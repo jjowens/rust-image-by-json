@@ -1,0 +1,11 @@
+{
+  "config": {
+    "open_file_path": "test-images/dog1.png",
+    "save_file_path": "test-output/workflow/filters/filter_5/exanple_in_reverse.png"
+  },
+  "instructions": [
+    {"process": "contrast", "value": "60"},
+    {"process": "brighten", "value": "10"},
+    {"process": "bluradvanced","blurtype": "anisotropic", "value": "5,10"}
+  ]
+}
