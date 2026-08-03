@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_file_path": "test-images/dog1.png",
+    "save_file_path": "test-output/huerotate/dog1_huerotate_180.png"
+  },
+  "instructions": [
+    {"process": "huerotate", "value": "180"}
+  ]
+}
