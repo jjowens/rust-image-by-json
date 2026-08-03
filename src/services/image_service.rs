@@ -78,11 +78,9 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
                 img = img.fast_blur(value);
             },
             ProcessType::BlurAdvanced => {
-                //let value = current_val.parse::<f32>().unwrap_or(0.0);
                 let blur_type : &BlurType = instruction.blurtype.as_ref().unwrap_or_else(|| &BlurType::Smooth3);
                 let gauss_parameters = get_gaussian_blur(blur_type, current_val);
 
-                //img = img.blur_advanced(GaussianBlurParameters::new_from_radius(value));
                 img = img.blur_advanced(gauss_parameters);
             },
             ProcessType::Flip => {
