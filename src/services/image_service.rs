@@ -2,6 +2,7 @@ use std::fs::{read_dir, read_to_string};
 use std::path::PathBuf;
 use image::ImageFormat;
 use serde_json::Result;
+use crate::services::helper;
 use crate::services::helper::{create_directory_from_file_path, get_gaussian_blur};
 use crate::services::models::process_type::ProcessType;
 use crate::services::models::blur_type::BlurType;
@@ -9,6 +10,7 @@ use crate::services::models::config::Config;
 use crate::services::models::instruction::Instruction;
 use crate::services::models::json_file::JsonFile;
 use crate::services::helper::{check_save_file_path, get_image_format_on_file_extension};
+use crate::services::models::resize_filter_type::ResizeFilterType;
 
 pub fn image_service(json_file_path: String) -> Result<()> {
     let file_contents = read_to_string(json_file_path);
@@ -114,7 +116,12 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
                         // DO NOTHING
                     }
                 }
-            }
+            },
+            ProcessType::Resize => {
+                let resize_filter_type : &ResizeFilterType = instruction.resizefiltertype.as_ref().unwrap_or_else(|| &ResizeFilterType::Nearest);
+                let image_filter_type: image::imageops::FilterType = helper::get_image_filter_type(resize_filter_type);
+                img = img.resize(1000, 1000, image_filter_type);
+            },
         }
     }
 

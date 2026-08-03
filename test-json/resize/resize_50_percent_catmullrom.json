@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_file_path": "test-images/dog1.png",
+    "save_file_path": "test-output/resize/dog1_50_percent_catmullrom.png"
+  },
+  "instructions": [
+    {"process": "resize", "value": "50", "resizefiltertype": "CatmullRom"}
+  ]
+}

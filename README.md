@@ -17,3 +17,12 @@ Example: Load basic_grayscale.json
 ````
  cargo run -- --json-file-path ./test-json/basic_grayscale.json
 ````
+
+Example: Load resize.json
+````
+ cargo run -- --json-file-path ./test-json/resize/resize_50_percent_catmullrom.json
+ cargo run -- --json-file-path ./test-json/resize/resize_50_percent_gaussian.json
+ cargo run -- --json-file-path ./test-json/resize/resize_50_percent_lanczos3.json
+ cargo run -- --json-file-path ./test-json/resize/resize_50_percent_triangle.json
+ cargo run -- --json-file-path ./test-json/resize/resize_50_percent_nearest.json
+````
