@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/unsharpen/batch"
+  },
+  "instructions": [
+    {"process": "unsharpen", "value": "10"}
+  ]
+}

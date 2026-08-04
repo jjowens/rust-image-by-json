@@ -1,9 +1,0 @@
-{
-  "config": {
-    "open_directory_path": "test-images/batch",
-    "save_directory_path": "test-output/unsharpen/threshold_100"
-  },
-  "instructions": [
-    {"process": "unsharpen", "value": "10", "unsharpenthreshold": "100"}
-  ]
-}

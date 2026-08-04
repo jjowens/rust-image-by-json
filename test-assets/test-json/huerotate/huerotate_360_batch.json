@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/huerotate/batch/360"
+  },
+  "instructions": [
+    {"process": "huerotate", "value": "360"}
+  ]
+}

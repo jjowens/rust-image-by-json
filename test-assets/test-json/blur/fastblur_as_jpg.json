@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_file_path": "test-assets/test-images/dog1.png",
+    "save_file_path": "test-assets/test-output/blur/dog1_fast_blur_as_jpg.jpg"
+  },
+  "instructions": [
+    {"process": "fastblur", "value": "10"}
+  ]
+}

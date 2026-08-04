@@ -1,9 +1,0 @@
-{
-  "config": {
-    "open_file_path": "test-images/dog1.png",
-    "save_file_path": "test-output/resize/dog1_width_height_50_percent.png"
-  },
-  "instructions": [
-    {"process": "resize", "width": "50%", "height": "50%" }
-  ]
-}

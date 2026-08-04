@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_file_path": "test-assets/test-images/dog1.png",
+    "save_file_path": "test-assets/test-output/unsharpen/dog3_unsharpen_20.png"
+  },
+  "instructions": [
+    {"process": "unsharpen", "value": "20"}
+  ]
+}

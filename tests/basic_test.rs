@@ -5,12 +5,12 @@ mod basic_test {
 
     #[test]
     fn basic_json() {
-       let _ = shared::run_json_instructions("test-json/basic/basic.json");
+       let _ = shared::run_json_instructions("test-assets/test-json/basic/basic.json");
     }
 
     #[test]
     fn basic_batch_json() {
-        let _ = shared::run_json_instructions("test-json/basic/basic_batch.json").unwrap();
+        let _ = shared::run_json_instructions("test-assets/test-json/basic/basic_batch.json").unwrap();
     }
 
 }
