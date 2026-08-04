@@ -23,4 +23,6 @@ pub enum ProcessType {
     BlurAdvanced,
     #[serde(rename = "resize")]
     Resize,
+    #[serde(rename = "unsharpen")]
+    Unsharpen
 }

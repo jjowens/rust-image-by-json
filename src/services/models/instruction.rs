@@ -10,5 +10,6 @@ pub struct Instruction {
     pub(crate) blurtype: Option<BlurType>,
     pub(crate) width: Option<String>,
     pub(crate) height: Option<String>,
-    pub(crate) resizefiltertype: Option<ResizeFilterType>
+    pub(crate) resizefiltertype: Option<ResizeFilterType>,
+    pub(crate) unsharpenthreshold: Option<String>
 }
