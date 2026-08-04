@@ -1,7 +1,6 @@
 mod shared;
 #[cfg(test)]
 mod basic_test {
-    use crate::shared;
 
     fn calculate_by_percent(val: u32, expected_result: u32, percent_as_string: String) {
         let percent = percent_as_string.parse::<f32>().unwrap();

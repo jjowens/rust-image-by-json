@@ -1,6 +1,5 @@
 #[cfg(test)]
 mod helper_resize_props_test {
-    use std::ptr::null;
     use rust_image_by_json::services::resize_helper::get_resize_properties;
     use rust_image_by_json::services::models::resize_props::ResizeProperties;
 
@@ -54,14 +53,33 @@ mod helper_resize_props_test {
     }
 
     #[test]
-    fn create_resize_properties_as_exact() {
+    fn create_resize_properties_as_exact_with_pixels() {
         let expected_props = ResizeProperties {
             width: 1200,
             height: 300
         };
 
-        validate_resize_properties(None, Some("1200".to_string()), Some("300".to_string()),  DEFAULT_IMAGE_WIDTH, DEFAULT_IMAGE_HEIGHT, expected_props);
+        validate_resize_properties(None, Some("1200px".to_string()), Some("300px".to_string()),  DEFAULT_IMAGE_WIDTH, DEFAULT_IMAGE_HEIGHT, expected_props);
     }
 
+    #[test]
+    fn create_resize_properties_as_exact_without_pixels_percent() {
+        let expected_props = ResizeProperties {
+            width: 500,
+            height: 210
+        };
+
+        validate_resize_properties(None, Some("500".to_string()), Some("210".to_string()),  DEFAULT_IMAGE_WIDTH, DEFAULT_IMAGE_HEIGHT, expected_props);
+    }
+
+    #[test]
+    fn create_resize_properties_as_exact_with_percent() {
+        let expected_props = ResizeProperties {
+            width: 160,
+            height: 120
+        };
+
+        validate_resize_properties(None, Some("25%".to_string()), Some("25%".to_string()),  DEFAULT_IMAGE_WIDTH, DEFAULT_IMAGE_HEIGHT, expected_props);
+    }
 
 }

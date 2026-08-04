@@ -4,6 +4,6 @@
     "save_file_path": "test-output/resize/dog1_50_percent_lanczos3.png"
   },
   "instructions": [
-    {"process": "resize", "value": "50", "resizefiltertype": "lanczos3"}
+    {"process": "resize", "value": "50%", "resizefiltertype": "lanczos3"}
   ]
 }

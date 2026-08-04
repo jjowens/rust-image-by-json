@@ -4,6 +4,6 @@
     "save_file_path": "test-output/resize/dog1_width_height_20_percent.png"
   },
   "instructions": [
-    {"process": "resize", "width": "20%", "height": "20%" }
+    {"process": "resize", "width": "20%", "height": "20%", "resizefiltertype": "nearest"}
   ]
 }

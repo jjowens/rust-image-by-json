@@ -12,4 +12,10 @@ mod resize_test {
        let _ = shared::run_json_instructions("test-json/resize/resize_50_percent_lanczos3.json");
     }
 
+    #[test]
+    fn resize_20_percent_json() {
+        let _ = shared::run_json_instructions("test-json/resize/resize_20_percent.json");
+        let _ = shared::run_json_instructions("test-json/resize/resize_width_height_20_percent.json");
+    }
+
 }

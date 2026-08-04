@@ -10,6 +10,7 @@ use crate::services::models::config::Config;
 use crate::services::models::instruction::Instruction;
 use crate::services::models::json_file::JsonFile;
 use crate::services::helper::{check_save_file_path, get_image_format_on_file_extension};
+use crate::services::resize_helper::get_resize_properties;
 use crate::services::models::resize_filter_type::ResizeFilterType;
 
 pub fn image_service(json_file_path: String) -> Result<()> {
@@ -121,7 +122,9 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
                 let resize_filter_type : &ResizeFilterType = instruction.resizefiltertype.as_ref().unwrap_or_else(|| &ResizeFilterType::Nearest);
                 let image_filter_type: image::imageops::FilterType = helper::get_image_filter_type(resize_filter_type);
 
-                img = img.resize_exact(1000, 1000, image_filter_type);
+                let resize_props = get_resize_properties(instruction.value.clone(), instruction.width.clone(), instruction.height.clone(), img.width(), img.height());
+
+                img = img.resize_exact(resize_props.width, resize_props.height, image_filter_type);
 
             },
         }

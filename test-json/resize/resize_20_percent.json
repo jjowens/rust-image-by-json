@@ -4,6 +4,6 @@
     "save_file_path": "test-output/resize/dog1_20_percent.png"
   },
   "instructions": [
-    {"process": "resize", "value": "20%"}
+    {"process": "resize", "value": "20%", "resizefiltertype": "nearest"}
   ]
 }
