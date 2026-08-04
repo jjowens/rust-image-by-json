@@ -2,6 +2,7 @@ use std::path::{Path, PathBuf};
 use image::ImageFormat;
 use image::imageops::GaussianBlurParameters;
 use crate::services::models::blur_type::BlurType;
+use crate::services::models::resize_filter_type::ResizeFilterType;
 
 pub fn get_file_extension_on_image_format(image_format: ImageFormat) -> String {
     let file_extension = match image_format {
@@ -87,4 +88,18 @@ pub fn check_save_file_path(save_file_path: &str, save_as_image_format: Option<I
             result.to_string()
         }
     }
+}
+
+pub fn get_image_filter_type(resize_filter_type: &ResizeFilterType) -> image::imageops::FilterType {
+    let image_filter_type = match resize_filter_type {
+        ResizeFilterType::CatmullRom => { image::imageops::FilterType::CatmullRom },
+        ResizeFilterType::Lanczos3 => { image::imageops::FilterType::Lanczos3 },
+        ResizeFilterType::Nearest => { image::imageops::FilterType::Nearest },
+        ResizeFilterType::Triangle => { image::imageops::FilterType::Triangle },
+        ResizeFilterType::Gaussian => { image::imageops::FilterType::Gaussian }
+    };
+
+    println!("Image Filter {:?}", image_filter_type);
+
+    image_filter_type
 }

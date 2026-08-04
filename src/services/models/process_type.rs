@@ -21,4 +21,6 @@ pub enum ProcessType {
     FastBlur,
     #[serde(rename = "bluradvanced")]
     BlurAdvanced,
+    #[serde(rename = "resize")]
+    Resize,
 }
