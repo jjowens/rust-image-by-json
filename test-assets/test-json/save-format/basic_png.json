@@ -1,0 +1,11 @@
+{
+  "config": {
+    "open_file_path": "test-assets/test-images/dog1.png",
+    "save_file_path": "test-assets/test-output/save-format/png/dog1.png",
+    "save_as_format": "png"
+  },
+  "instructions": [
+    {"process": "huerotate", "value": "100"},
+    {"process": "rotate", "value": "270"}
+  ]
+}

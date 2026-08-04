@@ -1,9 +1,0 @@
-{
-  "config": {
-    "open_file_path": "test-images/dog1.png",
-    "save_file_path": "test-output/rotate/dog1_rotate_90.png"
-  },
-  "instructions": [
-    {"process": "rotate", "value": "90"}
-  ]
-}

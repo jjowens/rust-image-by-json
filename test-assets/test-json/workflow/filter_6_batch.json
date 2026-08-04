@@ -1,0 +1,12 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/workflow/filters/filter_6/batch"
+  },
+  "instructions": [
+    {"process": "huerotate", "value": "90"},
+    {"process": "bluradvanced","blurtype": "anisotropic", "value": "5,10"},
+    {"process": "brighten", "value": "10"},
+    {"process": "contrast", "value": "60"}
+  ]
+}

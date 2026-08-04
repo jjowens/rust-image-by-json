@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_file_path": "test-assets/test-images/dog1_green.png",
+    "save_file_path": "test-assets/test-output/huerotate/dog1_green_huerotate_90.png"
+  },
+  "instructions": [
+    {"process": "huerotate", "value": "90"}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/workflow/filters/filter_4/batch"
+  },
+  "instructions": [
+    {"process": "huerotate", "value": "100"},
+    {"process": "rotate", "value": "270"},
+    {"process": "contrast", "value": "100"}
+  ]
+}

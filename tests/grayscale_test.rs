@@ -6,17 +6,17 @@ mod grayscale_test {
 
     #[test]
     fn basic_grayscale_json() {
-        let _ = shared::run_json_instructions("test-json/grayscale/grayscale.json");
+        let _ = shared::run_json_instructions("test-assets/test-json/grayscale/grayscale.json");
     }
 
     #[test]
     fn grayscale_combo() {
-        let _ = shared::run_json_instructions("test-json/grayscale/grayscale_combo.json");
+        let _ = shared::run_json_instructions("test-assets/test-json/grayscale/grayscale_combo.json");
     }
 
     #[test]
     fn grayscale_batch() {
-        let _ = shared::run_json_instructions("test-json/grayscale/grayscale_batch.json");
+        let _ = shared::run_json_instructions("test-assets/test-json/grayscale/grayscale_batch.json");
     }
 
 }

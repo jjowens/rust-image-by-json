@@ -1,0 +1,10 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/workflow/filters/filter_2/batch"
+  },
+  "instructions": [
+    {"process": "grayscale"},
+    {"process": "contrast", "value": "20"}
+  ]
+}

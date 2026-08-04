@@ -5,7 +5,7 @@ mod experiment_test {
 
     #[test]
     fn experiment_json() {
-       let _ = shared::run_json_instructions("test-json/experiment/experiment.json");
+       let _ = shared::run_json_instructions("test-assets/test-json/experiment/experiment.json");
     }
 
 

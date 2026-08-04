@@ -1,0 +1,11 @@
+{
+  "config": {
+    "open_file_path": "test-assets/test-images/dog1.png",
+    "save_file_path": "test-assets/test-output/workflow/filters/filter_5/exanple.png"
+  },
+  "instructions": [
+    {"process": "bluradvanced","blurtype": "anisotropic", "value": "5,10"},
+    {"process": "brighten", "value": "10"},
+    {"process": "contrast", "value": "60"}
+  ]
+}
