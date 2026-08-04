@@ -5,3 +5,4 @@ pub mod image_config;
 pub mod json_file;
 pub mod config;
 pub mod resize_filter_type;
+pub mod resize_props;

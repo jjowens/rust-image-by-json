@@ -120,7 +120,9 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
             ProcessType::Resize => {
                 let resize_filter_type : &ResizeFilterType = instruction.resizefiltertype.as_ref().unwrap_or_else(|| &ResizeFilterType::Nearest);
                 let image_filter_type: image::imageops::FilterType = helper::get_image_filter_type(resize_filter_type);
-                img = img.resize(1000, 1000, image_filter_type);
+
+                img = img.resize_exact(1000, 1000, image_filter_type);
+
             },
         }
     }
