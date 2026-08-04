@@ -127,6 +127,13 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
                 img = img.resize_exact(resize_props.width, resize_props.height, image_filter_type);
 
             },
+            ProcessType::Unsharpen => {
+                let value = current_val.parse::<f32>().unwrap_or(0.0);
+                let threshold_str = instruction.unsharpenthreshold.clone().unwrap_or("".to_string());
+                let threshold = threshold_str.parse::<i32>().unwrap_or(0);
+
+                img = img.unsharpen(value, threshold);
+            },
         }
     }
 
