@@ -10,31 +10,31 @@ mod helper_test {
 
     #[test]
     fn create_directory_test() {
-        create_directory("test-output/new-directory/new-file.png", "test-output/new-directory");
+        create_directory("test-assets/test-output/new-directory/new-file.png", "test-assets/test-output/new-directory");
     }
 
     #[test]
     fn create_subdirectory_test() {
-        create_directory("test-output/new-directory/sub-dir/new-file.png", "test-output/new-directory/sub-dir");
+        create_directory("test-assets/test-output/new-directory/sub-dir/new-file.png", "test-assets/test-output/new-directory/sub-dir");
     }
 
     #[test]
     fn create_subdirectories_test() {
-        create_directory("test-output/new-directory/sub-dir-1/sub-dir-2/sub-dir-3/new-file.png", "test-output/new-directory/sub-dir-1/sub-dir-2/sub-dir-3");
+        create_directory("test-assets/test-output/new-directory/sub-dir-1/sub-dir-2/sub-dir-3/new-file.png", "test-assets/test-output/new-directory/sub-dir-1/sub-dir-2/sub-dir-3");
     }
 
     #[test]
     fn create_subdirectory_already_exists_test() {
-        let file_path = "test-output/new-directory/already-exists/new-file.png";
-        let dir_path = "test-output/new-directory/already-exists";
+        let file_path = "test-assets/test-output/new-directory/already-exists/new-file.png";
+        let dir_path = "test-assets/test-output/new-directory/already-exists";
 
         create_directory(file_path, dir_path);
 
         // REPEAT STEP TO CHECK IF IT ALREADY EXISTS
         create_directory(file_path, dir_path);
 
-        let file_path = "test-output/new-directory/already-exists/alpha/beta/new-file.png";
-        let dir_path = "test-output/new-directory/already-exists/alpha/beta/";
+        let file_path = "test-assets/test-output/new-directory/already-exists/alpha/beta/new-file.png";
+        let dir_path = "test-assets/test-output/new-directory/already-exists/alpha/beta/";
 
         create_directory(file_path, dir_path);
 
