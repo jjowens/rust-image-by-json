@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/thumbnails_repo/resize_25_pixels"
+  },
+  "instructions": [
+    {"process": "resize", "value": "25px"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/thumbnails_repo/rotate_360"
+  },
+  "instructions": [
+    {"process": "resize", "value": "50%"},
+    {"process": "rotate", "value": "360"}
+  ]
+}

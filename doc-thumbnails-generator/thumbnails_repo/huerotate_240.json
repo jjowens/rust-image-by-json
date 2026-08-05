@@ -1,0 +1,10 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/thumbnails_repo/hue_rotate_240"
+  },
+  "instructions": [
+    {"process": "resize", "value": "50%"},
+    {"process": "huerotate", "value": "150"}
+  ]
+}

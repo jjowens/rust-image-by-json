@@ -1,0 +1,11 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/thumbnails_repo/flip_h_and_v"
+  },
+  "instructions": [
+    {"process": "resize", "value": "50%"},
+    {"process": "flip", "value": "V"},
+    {"process": "flip", "value": "h"}
+  ]
+}

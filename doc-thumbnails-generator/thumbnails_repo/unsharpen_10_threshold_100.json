@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/thumbnails_repo/unsharpen_10_threshold_100"
+  },
+  "instructions": [
+    {"process": "unsharpen", "value": "10", "unsharpenthreshold": "100"}
+  ]
+}

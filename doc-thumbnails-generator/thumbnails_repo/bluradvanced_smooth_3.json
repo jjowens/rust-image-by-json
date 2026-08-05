@@ -1,0 +1,10 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/thumbnails_repo/bluradvanced_smooth_10_10"
+  },
+  "instructions": [
+    {"process": "resize", "value": "50%"},
+    {"process": "bluradvanced", "blurtype": "smooth_3", "value": "smooth_3"}
+  ]
+}
