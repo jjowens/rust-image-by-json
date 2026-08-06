@@ -5,9 +5,9 @@ but a hue at 450 degrees will render the same image as at 90 degrees. It would m
 
 
 | Parameter | Value Type | Minimum Value | Maximum Value | Description               |
-|-----------|------------|---------------|---------------|---------------------------|
-| process   | String     | hue-rotate    | Set process type                        |
-| value     | String     | 0             | 360           | Rotates hue from 0 to 360 |
+|-----------|------------|--------------|---------------|---------------------------|
+| process   | String     | huerotate    | Set process type                        |
+| value     | String     | 0            | 360           | Rotates hue from 0 to 360 |
 
 
 ## Examples
@@ -16,7 +16,7 @@ but a hue at 450 degrees will render the same image as at 90 degrees. It would m
 
 Instructions: Hue rotate to 100 degrees
 ````
-{"process": "hue-rotate", "value": "100"}
+{"process": "huerotate", "value": "100"}
 ````
 
 | Original Image                     | Updated Image                            |
@@ -28,7 +28,7 @@ Instructions: Hue rotate to 100 degrees
 
 Instructions: Hue rotate to 150 degrees
 ````
-{"process": "hue-rotate", "value": "150"}
+{"process": "huerotate", "value": "150"}
 ````
 
 | Original Image                     | Updated Image                            |
@@ -40,7 +40,7 @@ Instructions: Hue rotate to 150 degrees
 
 Instructions: Hue rotate to 200 degrees
 ````
-{"process": "hue-rotate", "value": "200"}
+{"process": "huerotate", "value": "200"}
 ````
 
 | Original Image                     | Updated Image                            |
@@ -52,7 +52,7 @@ Instructions: Hue rotate to 200 degrees
 
 Instructions: Hue rotate to 240 degrees
 ````
-{"process": "hue-rotate", "value": "240"}
+{"process": "huerotate", "value": "240"}
 ````
 
 | Original Image                     | Updated Image                            |
