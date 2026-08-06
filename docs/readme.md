@@ -8,7 +8,7 @@ to prevent overwriting original images.
 ### Available Functions
 
 - [Blur](blur.md)
-- BlurAdvanced
+- [Blur Advanced](bluradvanced.md)
 - - Anisotropic
 - - Kernel
 - - Radius
@@ -21,10 +21,10 @@ to prevent overwriting original images.
 - [FastBlur](fastblur.md)
 - [Flip](flip.md)
 - [Grayscale](grayscale.md)
-- [HUeRotate](huerotate.md)
+- [HueRotate](huerotate.md)
 - [Resize](resize.md)
 - [Rotate](rotate.md)
-- Unsharpen
+- [Unsharpen](unsharpen.md)
 
 ### Tests
 

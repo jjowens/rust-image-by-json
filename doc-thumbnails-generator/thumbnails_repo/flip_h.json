@@ -4,7 +4,6 @@
     "save_directory_path": "docs/images/flip-h"
   },
   "instructions": [
-    {"process": "resize", "value": "50%"},
     {"process": "flip", "value": "h"}
   ]
 }

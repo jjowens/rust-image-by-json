@@ -4,7 +4,6 @@
     "save_directory_path": "docs/images/bluradvanced-kernel"
   },
   "instructions": [
-    {"process": "resize", "value": "50%"},
-    {"process": "bluradvanced", "blurtype": "smooth_3", "value": "smooth_3"}
+    {"process": "bluradvanced", "blurtype": "kernel", "value": "10"}
   ]
 }

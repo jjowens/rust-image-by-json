@@ -4,7 +4,6 @@
     "save_directory_path": "docs/images/grayscale"
   },
   "instructions": [
-    {"process": "resize", "value": "50%"},
     {"process": "grayscale"}
   ]
 }

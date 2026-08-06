@@ -4,7 +4,6 @@
     "save_directory_path": "docs/images/bluradvanced-radius-10"
   },
   "instructions": [
-    {"process": "resize", "value": "50%"},
     {"process": "bluradvanced", "blurtype": "radius", "value": "10"}
   ]
 }

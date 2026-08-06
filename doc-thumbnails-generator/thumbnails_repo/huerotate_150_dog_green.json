@@ -1,6 +1,6 @@
 {
   "config": {
-    "open_directory_path": "doc-thumbnails-generator/batch",
+    "open_directory_path": "doc-thumbnails-generator/batch-hue-rotate",
     "save_directory_path": "docs/images/hue-rotate-150"
   },
   "instructions": [

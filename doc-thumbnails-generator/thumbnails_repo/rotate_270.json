@@ -4,7 +4,6 @@
     "save_directory_path": "docs/images/rotate-270"
   },
   "instructions": [
-    {"process": "resize", "value": "50%"},
     {"process": "rotate", "value": "270"}
   ]
 }
