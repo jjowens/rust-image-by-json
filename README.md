@@ -26,3 +26,7 @@ Example: Load resize.json
  cargo run -- --json-file-path ./test-assets/test-json/resize/resize_50_percent_triangle.json
  cargo run -- --json-file-path ./test-assets/test-json/resize/resize_50_percent_nearest.json
 ````
+
+## Documentation
+
+[Read more...](docs/readme.md)

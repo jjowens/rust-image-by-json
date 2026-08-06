@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/bluradvanced-kernel"
+  },
+  "instructions": [
+    {"process": "bluradvanced", "blurtype": "kernel", "value": "10"}
+  ]
+}

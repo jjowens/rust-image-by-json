@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/resize-30-percent-catmullrom"
+  },
+  "instructions": [
+    {"process": "resize", "value": "30%", "resizefiltertype": "catmullrom"}
+  ]
+}

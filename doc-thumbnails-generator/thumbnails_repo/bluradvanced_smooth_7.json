@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/bluradvanced-smooth-7"
+  },
+  "instructions": [
+    {"process": "bluradvanced", "blurtype": "smooth_7", "value": "smooth_7"}
+  ]
+}

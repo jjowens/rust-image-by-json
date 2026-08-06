@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/rotate-180"
+  },
+  "instructions": [
+    {"process": "rotate", "value": "180"}
+  ]
+}

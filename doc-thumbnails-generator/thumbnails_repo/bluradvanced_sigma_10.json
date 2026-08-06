@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/bluradvanced-sigma-10"
+  },
+  "instructions": [
+    {"process": "bluradvanced", "blurtype": "sigma", "value": "10"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "config": {
+    "open_directory_path": "doc-thumbnails-generator/batch-hue-rotate",
+    "save_directory_path": "docs/images/hue-rotate-200"
+  },
+  "instructions": [
+    {"process": "huerotate", "value": "200"}
+  ]
+}

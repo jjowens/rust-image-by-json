@@ -1,0 +1,10 @@
+{
+  "config": {
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/flip-v-and-h"
+  },
+  "instructions": [
+    {"process": "flip", "value": "V"},
+    {"process": "flip", "value": "h"}
+  ]
+}
