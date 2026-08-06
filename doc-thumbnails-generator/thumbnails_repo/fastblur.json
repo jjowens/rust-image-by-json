@@ -1,7 +1,7 @@
 {
   "config": {
-    "open_file_path": "test-assets/test-images/dog1.png",
-    "save_file_path": "test-assets/test-output/blur/dog1_fast_blur.png"
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/fast-blur"
   },
   "instructions": [
     {"process": "fastblur", "value": "10"}

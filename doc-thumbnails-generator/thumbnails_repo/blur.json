@@ -1,7 +1,7 @@
 {
   "config": {
-    "open_directory_path": "test-assets/test-images/batch",
-    "save_directory_path": "test-assets/test-output/thumbnails_repo/blur_10"
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/blur-10"
   },
   "instructions": [
     {"process": "resize", "value": "50%"},

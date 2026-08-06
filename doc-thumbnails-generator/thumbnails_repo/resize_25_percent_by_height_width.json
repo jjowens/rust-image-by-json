@@ -1,7 +1,7 @@
 {
   "config": {
-    "open_directory_path": "test-assets/test-images/batch",
-    "save_directory_path": "test-assets/test-output/thumbnails_repo/resize_25_percent_height_width"
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/resize-25-percent-height-width"
   },
   "instructions": [
     {"process": "resize", "width": "25%", "height":  "25%"}

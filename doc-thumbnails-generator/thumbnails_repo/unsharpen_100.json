@@ -1,9 +1,10 @@
 {
   "config": {
-    "open_directory_path": "test-assets/test-images/batch",
-    "save_directory_path": "test-assets/test-output/thumbnails_repo/unsharpen_100"
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/unsharpen-100"
   },
   "instructions": [
+    {"process": "resize", "value": "50%"},
     {"process": "unsharpen", "value": "100"}
   ]
 }

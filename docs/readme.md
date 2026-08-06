@@ -7,15 +7,24 @@ to prevent overwriting original images.
 
 ### Available Functions
 
-- HueRotate
-- Rotate
+- [Blur](blur.md)
+- BlurAdvanced
+- - Anisotropic
+- - Kernel
+- - Radius
+- - Sigma
+- - Smooth3
+- - Smooth5
+- - Smooth7
+- Brighten
+- Contrast
+- FastBlur
+- [Flip](flip.md)
+- Grayscale
+- [HUeRotate](huerotate.md)
+- Resize
+- [Rotate](rotate.md)
 - Unsharpen
-- Blur. There are varied options to set different types of blurring
-- Resize images by pixels or percentage
-- Resave images in different formats
-- Brighten and Contrast images
-- Create grayscale images
-- Flip images horizontally, vertically, or both
 
 ### Tests
 
