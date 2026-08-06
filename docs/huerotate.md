@@ -3,11 +3,10 @@
 This instruction will rotate the hue of the images from 0 to 360 degrees. You can rotate over 360 degrees, 
 but a hue at 450 degrees will render the same image as at 90 degrees. It would make no difference.
 
-
-| Parameter | Value Type | Minimum Value | Maximum Value | Description               |
-|-----------|------------|--------------|---------------|---------------------------|
-| process   | String     | huerotate    | Set process type                        |
-| value     | String     | 0            | 360           | Rotates hue from 0 to 360 |
+| Name    | Data Type | Accepted Parameter(s)   | Minimum Value | Maximum Value | Description           |
+|---------|-----------|-------------------------|---------------|---------------|-----------------------|
+| process | String    | huerotate               | NA            | NA            | Set type of process   |
+| value   | String    | Any value from 0 to 360 | 0             | 260           | Rotates hue from 0 to 360 |
 
 
 ## Examples

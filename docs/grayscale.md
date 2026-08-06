@@ -2,11 +2,12 @@
 
 This instruction will create grayscale images.
 
+| Name    | Data Type | Accepted Parameter(s) | Minimum Value | Maximum Value | Description         |
+|---------|-----------|-----------------------|---------------|---------------|---------------------|
+| process | String    | grayscale             | NA            | NA            | Set type of process |
+| value   | NA        | NA                    | NA            | NA            | NA                  |
 
-| Parameter | Value Type | Accepted Values | Description                             |
-|-----------|------------|-----------------|-----------------------------------------|
-| process   | String     | graycale        | Set process type                        |
-| value     | NA         | NA              | This process does not accept any values |
+You do not need to set a value for grayscale. This process does not accept any values
 
 
 ## Example

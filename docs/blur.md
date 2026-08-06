@@ -2,10 +2,10 @@
 
 This instruction will add a blurring effect
 
-| Parameter | Value Type | Minimum Value | Maximum Value |
-|-----------|------------|---------------|---------------|
-| process   | String     | blur          | Set process type                        |
-| value     | String     | 0             | No Maximum    |
+| Name    | Data Type | Accepted Parameter(s) | Minimum Value | Maximum Value | Description           |
+|---------|-----------|-----------------------|---------------|---------------|-----------------------|
+| process | String    | blur                  | NA            | NA            | Set type of process   |
+| value   | String    | NA                    | 0             | 1,000         | Set level of blurring |
 
 
 ## Examples

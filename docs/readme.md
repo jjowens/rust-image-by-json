@@ -16,13 +16,13 @@ to prevent overwriting original images.
 - - Smooth3
 - - Smooth5
 - - Smooth7
-- Brighten
-- Contrast
-- FastBlur
+- [Brighten](brighten.md)
+- [Contrast](contrast.md)
+- [FastBlur](fastblur.md)
 - [Flip](flip.md)
 - [Grayscale](grayscale.md)
 - [HUeRotate](huerotate.md)
-- Resize
+- [Resize](resize.md)
 - [Rotate](rotate.md)
 - Unsharpen
 

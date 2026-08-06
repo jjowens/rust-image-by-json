@@ -3,10 +3,10 @@
 This instruction will rotate images. Due to Rust Image package, it's limited to rotating images to 90, 180, 270, and 360 degrees.
 
 
-| Parameter | Value Type | Accepted Values   | Description               |
-|-----------|------------|-------------------|---------------------------|
-| process   | String     | rotate            | Set process type                        |
-| value     | String     | 90, 180, 270, 360 | Rotates hue from 0 to 360 |
+| Name    | Data Type | Accepted Parameter(s) | Minimum Value | Maximum Value | Description                 |
+|---------|-----------|-----------------------|---------------|---------------|-----------------------------|
+| process | String    | rotate                | NA            | NA            | Set type of process         |
+| value   | String    | 90, 180, 270, 360     | 0             | 360           | Rotates image from 0 to 360 |
 
 
 ## Examples

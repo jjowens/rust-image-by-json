@@ -2,12 +2,11 @@
 
 This instruction will flip images horizontally, vertically, or both. You can use both by running instructions one after the other.
 
-| Parameter | Value Type | Accepted Value | Description              |
-|-----------|------------|----------------|--------------------------|
-| process   | String     | flip           | Set process type                        |
-| value     | String     | h              | Flips image horizontally |
-| value     | String     | v              | Flips image vertically |
 
+| Name    | Data Type | Accepted Parameter(s) | Minimum Value | Maximum Value | Description                           |
+|---------|-----------|-----------------------|---------------|---------------|---------------------------------------|
+| process | String    | flip                  | NA            | NA            | Set type of process                   |
+| value   | String    | h or v                | NA            | NA            | Flip image horizontally or vertically |
 
 ## Examples
 
