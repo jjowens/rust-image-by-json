@@ -99,7 +99,5 @@ pub fn get_image_filter_type(resize_filter_type: &ResizeFilterType) -> image::im
         ResizeFilterType::Gaussian => { image::imageops::FilterType::Gaussian }
     };
 
-    println!("Image Filter {:?}", image_filter_type);
-
     image_filter_type
 }
