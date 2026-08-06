@@ -48,11 +48,11 @@ Instructions: Set blur type to sigma. Set value to 10
 | ![image](images/original/dog1.png) | ![image](images/bluradvanced-sigma-10/dog1.png) |
 | ![image](images/original/dog2.png) | ![image](images/bluradvanced-sigma-10/dog2.png) |
 
-## Set blur type to smooth_3
+## Set blur type to smooth_3. Cannot set value
 
-Instructions: Set blur type to smooth_3.
+Instructions: Set blur type to smooth_3. Cannot set value
 ````
-{"process": "bluradvanced", "blurtype": "smooth_3", "value": "smooth_3"}
+{"process": "bluradvanced", "blurtype": "smooth_3"}
 ````
 
 | Original Image                     | Updated Image                          |
@@ -60,11 +60,11 @@ Instructions: Set blur type to smooth_3.
 | ![image](images/original/dog1.png) | ![image](images/bluradvanced-smooth-3/dog1.png) |
 | ![image](images/original/dog2.png) | ![image](images/bluradvanced-smooth-3/dog2.png) |
 
-## Set blur type to smooth_5
+## Set blur type to smooth_5. Cannot set value
 
 Instructions: Set blur type to smooth_5.
 ````
-{"process": "bluradvanced", "blurtype": "smooth_5", "value": "smooth_5"}
+{"process": "bluradvanced", "blurtype": "smooth_5"}
 ````
 
 | Original Image                     | Updated Image                                   |
@@ -72,11 +72,11 @@ Instructions: Set blur type to smooth_5.
 | ![image](images/original/dog1.png) | ![image](images/bluradvanced-smooth-5/dog1.png) |
 | ![image](images/original/dog2.png) | ![image](images/bluradvanced-smooth-5/dog2.png) |
 
-## Set blur type to smooth_7
+## Set blur type to smooth_7. Cannot set value
 
-Instructions: Set blur type to smooth_7.
+Instructions: Set blur type to smooth_7. Cannot set value
 ````
-{"process": "bluradvanced", "blurtype": "smooth_7", "value": "smooth_7"}
+{"process": "bluradvanced", "blurtype": "smooth_7"}
 ````
 
 | Original Image                     | Updated Image                                   |
