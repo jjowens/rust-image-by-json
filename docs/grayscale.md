@@ -3,7 +3,7 @@
 This instruction will create grayscale images.
 
 
-| Paraneter | Value Type | Accepted Values | Description                             |
+| Parameter | Value Type | Accepted Values | Description                             |
 |-----------|------------|-----------------|-----------------------------------------|
 | process   | String     | graycale        | Set process type                        |
 | value     | NA         | NA              | This process does not accept any values |

@@ -20,7 +20,7 @@ to prevent overwriting original images.
 - Contrast
 - FastBlur
 - [Flip](flip.md)
-- Grayscale
+- [Grayscale](grayscale.md)
 - [HUeRotate](huerotate.md)
 - Resize
 - [Rotate](rotate.md)

@@ -4,7 +4,7 @@ This instruction will rotate the hue of the images from 0 to 360 degrees. You ca
 but a hue at 450 degrees will render the same image as at 90 degrees. It would make no difference.
 
 
-| Paraneter | Value Type | Minimum Value | Maximum Value | Description               |
+| Parameter | Value Type | Minimum Value | Maximum Value | Description               |
 |-----------|------------|---------------|---------------|---------------------------|
 | process   | String     | hue-rotate    | Set process type                        |
 | value     | String     | 0             | 360           | Rotates hue from 0 to 360 |

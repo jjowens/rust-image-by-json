@@ -2,7 +2,7 @@
 
 This instruction will add a blurring effect
 
-| Paraneter | Value Type | Minimum Value | Maximum Value |
+| Parameter | Value Type | Minimum Value | Maximum Value |
 |-----------|------------|---------------|---------------|
 | process   | String     | blur          | Set process type                        |
 | value     | String     | 0             | No Maximum    |

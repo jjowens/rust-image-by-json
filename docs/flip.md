@@ -2,7 +2,7 @@
 
 This instruction will flip images horizontally, vertically, or both. You can use both by running instructions one after the other.
 
-| Paraneter | Value Type | Accepted Value | Description              |
+| Parameter | Value Type | Accepted Value | Description              |
 |-----------|------------|----------------|--------------------------|
 | process   | String     | flip           | Set process type                        |
 | value     | String     | h              | Flips image horizontally |
