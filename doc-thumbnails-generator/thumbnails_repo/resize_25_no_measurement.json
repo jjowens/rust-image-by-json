@@ -1,6 +1,6 @@
 {
   "config": {
-    "open_directory_path": "doc-thumbnails-generator/batch",
+    "open_directory_path": "doc-thumbnails-generator/already-50-percent",
     "save_directory_path": "docs/images/resize-25-no-measurement"
   },
   "instructions": [
