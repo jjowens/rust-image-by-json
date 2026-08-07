@@ -1,0 +1,11 @@
+{
+  "config": {
+    "open_directory_path": "doc-thumbnails-generator/batch",
+    "save_directory_path": "docs/images/grayscale-effect-1"
+  },
+  "instructions": [
+    {"process": "brighten", "value": "10"},
+    {"process": "contrast", "value": "50"},
+    {"process": "grayscale"}
+  ]
+}
