@@ -4,7 +4,7 @@ This instruction will add a blurring effect as well as different types of blurri
 
 | Name     | Data Type | Accepted Parameter(s)                                                    | Minimum Value | Maximum Value | Description                                                        |
 |----------|-----------|--------------------------------------------------------------------------|---------------|---------------|--------------------------------------------------------------------|
-| process  | String    | unsharpen                                                                | NA            | NA            | Set type of process                                                |
+| process  | String    | bluradvanced                                                             | NA            | NA            | Set type of process                                                |
 | blurtype | String    | anisotropic, kernel, radius, sigma, smooth_3, smooth_5, smooth_7, kernel | 0             | 1,000         | Set type of blur type                                              |
 | value    | String    | NA                                                                       | 0             | 1,000         | Set level of blurring                                              |
 |     |     |                                                                        | [0,0]         | [1000,1000]   | Anisotropic only. Set level of blurring as an array|

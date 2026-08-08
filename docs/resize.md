@@ -17,6 +17,12 @@ This instruction will resize images . Due to Rust Image package, it's limited to
 If percentage or pixels are NOT set in the value, width and height, e.g. 10% or 10px, it will default to pixels. 
 If resizefiltertype is not set either, it will default to nearest
 
+> [!NOTE]
+> When you set a percentage for your image's width or height, it will round down the nearest value. 
+> For example, your image is 640 pixels wide and you set 29% of it, the output would be 185.6, 
+> but it will be rounded down to 185px wide. Rust image crate has a [resize exact function](https://docs.rs/image/latest/image/enum.DynamicImage.html#method.resize_exact) which allows integers without a 
+> fractional component. It doesn't allow decimal numbers, hence it needs to be rounded down.
+
 ## Percent and Pixels Examples
 
 ## Resize image to 25 pixels as default

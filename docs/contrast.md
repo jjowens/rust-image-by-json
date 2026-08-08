@@ -2,10 +2,10 @@
 
 This instruction will add a contrast effect
 
-| Name    | Data Type | Accepted Parameter(s) | Minimum Value | Maximum Value | Description              |
-|---------|-----------|-----------------------|---------------|---------------|--------------------------|
-| process | String    | contrast              | NA            | NA            | Set type of process      |
-| value   | String    | NA                    | 0             | 1,000         | Set level of brightening |
+| Name    | Data Type | Accepted Parameter(s) | Minimum Value | Maximum Value | Description           |
+|---------|-----------|-----------------------|---------------|---------------|-----------------------|
+| process | String    | contrast              | NA            | NA            | Set type of process   |
+| value   | String    | NA                    | 0             | 1,000         | Set level of contrast |
 
 
 ## Examples
