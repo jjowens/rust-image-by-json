@@ -9,7 +9,7 @@ struct Args {
     json_file_path: String
 }
 
-fn main() {
+fn main() -> Result<(), String> {
     println!("Image By JSON");
     println!("Package Name: {}", env!("CARGO_PKG_NAME"));
     println!("Version {}", env!("CARGO_PKG_VERSION"));
@@ -18,5 +18,7 @@ fn main() {
 
     println!("JSON file path: {}", args.json_file_path);
 
-    let _ = image_service(args.json_file_path);
+    let output = image_service(args.json_file_path);
+    
+    output
 }

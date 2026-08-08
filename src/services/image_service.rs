@@ -1,7 +1,6 @@
 use std::fs::{read_dir, read_to_string};
 use std::path::PathBuf;
 use image::ImageFormat;
-use serde_json::Result;
 use crate::services::helper;
 use crate::services::helper::{create_directory_from_file_path, get_gaussian_blur};
 use crate::services::models::process_type::ProcessType;
@@ -13,9 +12,25 @@ use crate::services::helper::{check_save_file_path, get_image_format_on_file_ext
 use crate::services::resize_helper::get_resize_properties;
 use crate::services::models::resize_filter_type::ResizeFilterType;
 
-pub fn image_service(json_file_path: String) -> Result<()> {
-    let file_contents = read_to_string(json_file_path);
-    let json: JsonFile = serde_json::from_str(&file_contents.unwrap())?;
+pub fn image_service(json_file_path: String) -> Result<(), String> {
+    let file_contents = match read_to_string(json_file_path) {
+        Ok(contents) => contents,
+        Err(error) => return Err(error.to_string())
+    };
+
+    let json: JsonFile = match serde_json::from_str(&file_contents) {
+        Ok(j) => j,
+        Err(_e) => return Err(_e.to_string())
+    };
+
+    let instructions_total = Ok(json.instructions.len() > 0);
+
+    let res = match instructions_total {
+        Err(error) => return Err(error),
+        Ok(instructions_total) => instructions_total
+    };
+
+
     let config = &json.config;
 
     if config.open_directory_path.is_some() && config.save_directory_path.is_some() {
@@ -45,7 +60,7 @@ pub fn image_service(json_file_path: String) -> Result<()> {
     Ok(())
 }
 
-pub fn read_instructions(open_file_path: &String, save_file_path: &String, instructions: &Vec<Instruction>, config: &Config) ->  Result<()>  {
+pub fn read_instructions(open_file_path: &String, save_file_path: &String, instructions: &Vec<Instruction>, config: &Config) ->  Result<(), String>  {
     let mut img = image::open(open_file_path).unwrap();
 
     for instruction in instructions {

@@ -1,0 +1,6 @@
+{
+  "config": {
+    "open_file_path": "test-assets/test-images/dog1.png",
+    "save_file_path": "test-assets/test-output/bad_json/dog1_no_instructions.png"
+  }
+}

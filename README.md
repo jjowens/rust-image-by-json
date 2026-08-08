@@ -27,6 +27,11 @@ Example: Load resize.json
  cargo run -- --json-file-path ./test-assets/test-json/resize/resize_50_percent_nearest.json
 ````
 
+Test Bad JSON
+````
+cargo run -- --json-file-path ./test-assets/test-json/bad-json/file_does_not_exists.json
+````
+
 ## Documentation
 
 [Read more...](docs/readme.md)

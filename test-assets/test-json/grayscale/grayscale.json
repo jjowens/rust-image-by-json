@@ -1,10 +1,9 @@
 {
   "config": {
-    "open_file_path": "test-assets/test-images/dog2.png",
+    "open_file_path": "test-assets/test-images/dog1.png",
     "save_file_path": "test-assets/test-output/grayscale/dog1_basic_grayscale.png"
   },
   "instructions": [
-    {"process": "grayscale"},
-    {"process": "rotate", "value": "270"}
+    {"process": "grayscale"}
   ]
 }
