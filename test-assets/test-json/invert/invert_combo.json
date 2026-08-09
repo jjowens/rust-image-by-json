@@ -1,0 +1,11 @@
+{
+  "config": {
+    "open_directory_path": "test-assets/test-images/batch",
+    "save_directory_path": "test-assets/test-output/invert/batch-combo"
+  },
+  "instructions": [
+    {"process": "huerotate", "value": "200"},
+    {"process": "invert"},
+    {"process": "unsharpen", "value": "5"}
+  ]
+}

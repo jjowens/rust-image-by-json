@@ -70,6 +70,9 @@ pub fn read_instructions(open_file_path: &String, save_file_path: &String, instr
 
                 img = img.adjust_contrast(value);
             },
+            ProcessType::Invert => {
+                img.invert();
+            },
             ProcessType::Blur => {
                 let value = current_val.parse::<f32>().unwrap_or(0.0);
 

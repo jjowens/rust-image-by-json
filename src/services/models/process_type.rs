@@ -24,5 +24,7 @@ pub enum ProcessType {
     #[serde(rename = "resize")]
     Resize,
     #[serde(rename = "unsharpen")]
-    Unsharpen
+    Unsharpen,
+    #[serde(rename = "invert")]
+    Invert
 }

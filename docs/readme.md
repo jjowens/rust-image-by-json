@@ -32,6 +32,7 @@ Those functions are described as instructions in the JSON file
 - [Flip](flip.md)
 - [Grayscale](grayscale.md)
 - [HueRotate](huerotate.md)
+- [Invert](invert.md)
 - [Resize](resize.md)
 - [Rotate](rotate.md)
 - [Unsharpen](unsharpen.md)
